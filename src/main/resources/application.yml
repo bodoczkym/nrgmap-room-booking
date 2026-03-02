@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: nrgmap-room-booking
+
+  datasource:
+    url: jdbc:h2:mem:roombooking;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yml
+
+server:
+  port: 8080
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
