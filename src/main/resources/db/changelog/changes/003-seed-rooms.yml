@@ -1,0 +1,45 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003-seed-rooms
+      author: bodoczkym
+      changes:
+        - insert:
+            tableName: room
+            columns:
+              - column: { name: name, value: "Blue Room" }
+              - column: { name: capacity, valueNumeric: 10 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: has_projector, valueBoolean: true }
+              - column: { name: has_whiteboard, valueBoolean: true }
+        - insert:
+            tableName: room
+            columns:
+              - column: { name: name, value: "Red Room" }
+              - column: { name: capacity, valueNumeric: 6 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: has_projector, valueBoolean: true }
+              - column: { name: has_whiteboard, valueBoolean: false }
+        - insert:
+            tableName: room
+            columns:
+              - column: { name: name, value: "Green Room" }
+              - column: { name: capacity, valueNumeric: 4 }
+              - column: { name: floor, valueNumeric: 2 }
+              - column: { name: has_projector, valueBoolean: false }
+              - column: { name: has_whiteboard, valueBoolean: true }
+        - insert:
+            tableName: room
+            columns:
+              - column: { name: name, value: "Board Room" }
+              - column: { name: capacity, valueNumeric: 20 }
+              - column: { name: floor, valueNumeric: 3 }
+              - column: { name: has_projector, valueBoolean: true }
+              - column: { name: has_whiteboard, valueBoolean: true }
+        - insert:
+            tableName: room
+            columns:
+              - column: { name: name, value: "Phone Booth" }
+              - column: { name: capacity, valueNumeric: 2 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: has_projector, valueBoolean: false }
+              - column: { name: has_whiteboard, valueBoolean: false }
