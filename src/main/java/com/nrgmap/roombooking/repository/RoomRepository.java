@@ -1,0 +1,19 @@
+package com.nrgmap.roombooking.repository;
+
+import java.util.Optional;
+
+import com.nrgmap.roombooking.model.Room;
+import jakarta.persistence.LockModeType;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Lock;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface RoomRepository extends JpaRepository<Room, Long> {
+
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
+    @Query("SELECT r FROM Room r WHERE r.id = :id")
+    Optional<Room> findByIdWithLock(Long id);
+
+}
