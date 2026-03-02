@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-room-table
+      author: bodoczkym
+      changes:
+        - createTable:
+            tableName: room
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: capacity
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: floor
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: has_projector
+                  type: BOOLEAN
+                  constraints:
+                    nullable: false
+              - column:
+                  name: has_whiteboard
+                  type: BOOLEAN
+                  constraints:
+                    nullable: false
